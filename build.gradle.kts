@@ -1,5 +1,5 @@
 plugins {
-    alias(libs.plugins.fabric.loom)
+    id("fabric-loom") version "1.7.1"
 }
 
 base {
@@ -16,12 +16,9 @@ repositories {
 }
 
 dependencies {
-    // Minecraft & Fabric
     minecraft(libs.minecraft)
     mappings(variantOf(libs.yarn) { classifier("v2") })
     modImplementation(libs.fabric.loader)
-
-    // Meteor Client (snapshot)
     modImplementation(libs.meteor.client)
 }
 
